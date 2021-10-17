@@ -34,7 +34,6 @@ export class ClientService {
     async validatePassword(email: string, password: string): Promise<boolean> {
         const filter = { email: email };
         const client: Client = await this.clientModel.findOne(filter).exec();
-        Logger
         return await bcrypt.compareSync(password, client.password);
     }
 
