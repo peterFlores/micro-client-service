@@ -13,7 +13,7 @@ export class ClientController {
         return await this.service.findAll();
     }
 
-    @Get("/id/:")
+    @Get("/id/:id")
     async findByUser(@Param('id') id: string) {
         Logger.log(id);
         return await this.service.findOne(id);
